@@ -20,54 +20,34 @@ if(open(myfile,"C:/SPMS/Resource-Skillset.csv"))
 $k=3;
 $l=4;
 
-         if($array[$k]<=24)
-              {
+         if($array[$k]<=24) {
                  $array[$l]=L1;
               }
-              elsif($array[$k]>24 and $array[$k]<84)
-              {
+              elsif($array[$k]>24 and $array[$k]<84){
                  $array[$l]=L2;
               }
-              else
-              {
+              else{
                  $array[$l]=L3;
               }
     
        $value=$array[$size1];
        $part=substr($value,1);
-                                                                                                 
-                                      
- 
- 
+                  
        $array[$size1]=$part;
 
-  
-                for($i=$size1;$i<$size;$i++)
-                      {
-  
-                          for($j=0;$j<$size1;$j++)
-                            {
-   
+                for($i=$size1;$i<$size;$i++){
+                          for($j=0;$j<$size1;$j++){
                                print OUTFILE "$array[$j],";
-
                             }
- 
                          print OUTFILE "$array[$i]\n";
- 
- 
                        }
-  
         $line=<myfile>;
-
       }
 
 close(myfile);
 close(OUTFILE);
+}                                                                             
 
-             }                                                                             
-
-else
-
-   {
+else{
       print "Error : couldn't open the specified file";
    }

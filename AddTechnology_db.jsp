@@ -10,9 +10,7 @@
 
 <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
-
 </head>
-
 
 <body>
 
@@ -40,7 +38,6 @@
 
 <div class="headerm">
 
-
 <ul>
 
 <li><a href="welcome_admin.jsp">Home</a></li>
@@ -61,9 +58,7 @@
 
 </div>
 
-
 <div class="left">
-
 
 <h2>Quick Links :</h2>
 
@@ -81,11 +76,7 @@
 
 <li><a href="upload_spms_data.jsp">Upload SPMS Data</a></li>
 
-
- 
-
 </ul>
-
 
 <img src="images/logo.jpg" width="220" height="350"></img>
 
@@ -136,64 +127,36 @@
                                             	   stmt2=con.createStatement();
                                             	   
                                             	   rs2=stmt2.executeQuery(subskillcheck);
-                                            	   while(rs2.next())
-
-                                            		   
-
-                                            	   {
-
-                                            	    
+                                            	   while(rs2.next()){
 
                                             	   String s1=rs2.getString(1);
-
-                                            	    
-
                                             	   //out.println("<tr><td>"+s1+"</td>");
-
                                                    count++;
                                             	   }
-                                            	  
                                             	    //out.println(count);
                                             	  
                                             	   if(count==0)
                                             	   {                                          		  
-                                                           	      
-                                               	      
                                                	      stmt=con.createStatement();
                                                	      stmt1=con.createStatement();
-                  	  								  int result = stmt.executeUpdate(Query);
-                                               	      //System.out.println(result);
-                                          			   
-                                          			   if(result > 0)	
-                                          			   {
-                                          				%>
-                                          				
+						      int result = stmt.executeUpdate(Query);
+                                               	      if(result > 0){
+                                          		%>
                                                          <h3 align=center>Data Added successfully</h3>
                                                          <h3 align=center>Do you want to add another Subskill</h3>
                                                		     <P align=center><A HREF="AddTechnology.jsp">click here</A></P>
-                                               		
-                                            	   
-                                            	     
-                                           		        <%
-                                            	       }
-                                            		  
+
+                                           	        <%
+                                            	     }  
                                                }
-                                            	   
-   											else
-   										   {
-   											 %>
+						    else
+   						    {
+   						     %>
                                              <h3 align=center>Subskill Already exists</h3>
                                              <h3 align=center>Do you want to add another Subskill</h3>
                                    		     <P align=center><A HREF="AddTechnology.jsp">click here</A></P>
-                                   		
-                                            	   
-                                            		<%
+						    <%
                                        	    }
-                                            	   
-										     
-   													
-   													
-   													                  			   
                                        			 if(technology1!=null)
                                                  {
                                                 	 //System.out.println("if entered");
@@ -204,16 +167,8 @@
 		con.close();}catch(Exception e){%><%=e%><%}
 	
 %>
- 
-
 </div>
-
-
- 
-
 <div style="clear: both;"> </div>
-
-
 </div>
 
 <div id="bottom"> </div>
@@ -223,10 +178,7 @@
 <div id="footer">
 
 &copy;
-
-
 </div>
-
 
 </div>
 
